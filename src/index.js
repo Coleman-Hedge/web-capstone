@@ -165,9 +165,7 @@ function toggleVisibility(hole){
 */
 function updateScore() {
   // TODO: Write your code here
-  console.log("current score is " + points);
   points++;
-  console.log("score updated to " + points);
   score.textContent = points;
   return points;
 }
@@ -225,7 +223,6 @@ function whack(event) {
   // TODO: Write your code here.
   console.log("whack!")
   updateScore();
-  toggleVisibility(event.target.parentNode);
   return points;
 }
 
@@ -262,7 +259,6 @@ function setDuration(duration) {
 function stopGame(){
   // stopAudio(song);  //optional
   clearInterval(timer);
-  clearScore();
   return "game stopped";
 }
 
@@ -273,6 +269,7 @@ function stopGame(){
 *
 */
 function startGame(){
+  clearScore();
   setDuration(10);
   showUp();
   startTimer();
