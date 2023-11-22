@@ -225,6 +225,7 @@ function whack(event) {
   // TODO: Write your code here.
   console.log("whack!")
   updateScore();
+  toggleVisibility(event.target.parentNode);
   return points;
 }
 
