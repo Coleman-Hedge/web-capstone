@@ -9,7 +9,8 @@ let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "easy";
+let lastMoleHit;
 
 /**
  * Generates a random integer within a range.
@@ -222,7 +223,10 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   console.log("whack!")
-  updateScore();
+  if(event.target !== lastMoleHit) {
+    lastMoleHit = event.target;
+    updateScore();
+  }
   return points;
 }
 
